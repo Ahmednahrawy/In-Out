@@ -1,0 +1,6 @@
+{
+  "name": "Rustic Orchard",
+  "description": "Local farm-to-table marketplace connecting growers and consumers with custom packaging, invoice sharing, split map discovery, live tracking, direct chat, and Gemini AI recommendations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
