@@ -57,4 +57,21 @@ class ExampleUnitTest {
         val updatedProduct = repo.products.value.first { it.id == "prod_2" }
         assertEquals(initialStock - 2.0, updatedProduct.stockWeight, 0.01)
     }
+
+    @Test
+    fun testRoleAssignment() {
+        val consumerProfile = com.example.auth.UserProfile(
+            uid = "user_123",
+            email = "consumer@example.com",
+            displayName = "Jane Doe",
+            photoUrl = null,
+            role = com.example.auth.UserRole.CONSUMER
+        )
+        assertEquals(com.example.auth.UserRole.CONSUMER, consumerProfile.role)
+        assertEquals("Consumer / Buyer", consumerProfile.role.label)
+
+        val growerProfile = consumerProfile.copy(role = com.example.auth.UserRole.GROWER)
+        assertEquals(com.example.auth.UserRole.GROWER, growerProfile.role)
+        assertEquals("Local Grower / Farmer", growerProfile.role.label)
+    }
 }
